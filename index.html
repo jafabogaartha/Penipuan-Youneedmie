@@ -1,14 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awass penipuan !!</title>
     <link rel="icon" href="img/icon/img.png" type="image/x-icon">
     <link rel="shortcut icon" href="img/icon/img.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <meta name="description" content="Penipuan mengatasnamakan You Need Mie semakin marak. Ini cara mengetahuinya">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #be1919 0%, #d63030 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #be1919;
+            display: inline-block;
+        }
+
+        /* Styling untuk daftar fake akun dan nomor penipuan */
+        .warning-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .warning-list li {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            list-style: none;
+        }
+
+        .warning-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .warning-list a {
+            color: #be1919;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-list a:hover {
+            color: #961414;
+        }
+
+        /* Styling untuk bukti penipuan */
+        .evidence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .evidence-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            list-style: none;
+        }
+
+        .evidence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .evidence-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Styling untuk akun resmi */
+        .official-section h1 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .official-accounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .official-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .official-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .official-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .official-content {
+            padding: 1.5rem;
+        }
+
+        .official-content h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .official-content p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .official-content a {
+            color: #be1919;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .official-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            main {
+                padding: 0 1rem;
+            }
+
+            .evidence-list, .official-accounts {
+                grid-template-columns: 1fr;
+            }
+
+            .evidence-card img, .official-card img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .warning-list {
+                grid-template-columns: 1fr;
+            }
+
+            .card-content h3, .official-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .card-content p, .official-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,114 +241,113 @@
         <h1>Fake akun YouNeedMie</h1>
     </header>
     <main>
+        <section>
+            <h2>Daftar fake akun</h2>
+            <ul class="warning-list">
+                <li><a href="https://www.facebook.com/profile.php?id=100091862267362">📱 kemitraan warmindo kekinian</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100091753425973">📱 Agen Mitra Warmindo</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100092228388920">📱 Franchise Warmindo kekinian</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100090302994663">📱 Mitra Usaha Warmindo</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100091314190041">📱 Franchise Warmindo Official</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100089545304801">📱 Kemitraan Warmindo Official</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100091146318683">📱 Mitra Warmindo</a></li>
+            </ul>
 
-        <ul>
-            <h2>Daftar fake akun </h2>
-            <li><a href="https://www.facebook.com/profile.php?id=100091862267362">kemitraan warmindo kekinian</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100091753425973">Agen Mitra Warmindo</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100092228388920">Franchise Warmindo kekinian</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100090302994663">Mitra Usaha Warmindo</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100091314190041">Franchise Warmindo Official</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100089545304801">Kemitraan Warmindo Official</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100091146318683">Mitra Warmindo</a></li>
-        </ul>
-
-        <ul>
-            <h2>Nomor penipuan </h2>
-            <li><a href="https://wa.me/6282195530786">082195530786</a></li>
-            <li><a href="https://wa.me/6282271154297">082271154297</a></li>
-            <li><a href="https://wa.me/6281348442188">081348442188</a></li>
-            <li><a href="https://wa.me/6281393444131">081393444131</a></li>
-        </ul>
+            <h2>Nomor penipuan</h2>
+            <ul class="warning-list">
+                <li><a href="https://wa.me/6282195530786">⚠️ 082195530786</a></li>
+                <li><a href="https://wa.me/6282271154297">⚠️ 082271154297</a></li>
+                <li><a href="https://wa.me/6281348442188">⚠️ 081348442188</a></li>
+                <li><a href="https://wa.me/6281393444131">⚠️ 081393444131</a></li>
+            </ul>
+        </section>
 
         <section>
             <h2>Bukti Penipuan</h2>
-            <ul>
-                <li>
-                    <img src="img/img (10).jpeg" alt="Item 1" style="pointer-events: none; user-select: none;">
-                    <div>
+            <ul class="evidence-list">
+                <li class="evidence-card">
+                    <img src="img/img (10).jpeg" alt="Item 1">
+                    <div class="card-content">
                         <h3>Contoh penipu</h3>
-                        <p>Penipu biasanya menggunakan foto orang lain atau identitas orang lain dalam melancarkan
-                            aksinya.</p>
+                        <p>Penipu biasanya menggunakan foto orang lain atau identitas orang lain dalam melancarkan aksinya.</p>
                     </div>
                 </li>
-            
 
-
-                <li>
-                    <img src="img/img (4).jpeg" alt="Item 3" style="pointer-events: none; user-select: none;">
-                    <div>
+                <li class="evidence-card">
+                    <img src="img/img (4).jpeg" alt="Item 3">
+                    <div class="card-content">
                         <h3>Jangan tergiur harga murah</h3>
-                        <p>Ingat, jangan pernah tergiur juga dengan harga murah ambal ambal diskon, Bisa jadi itu juga
-                            salah satu cara pelaku mengelabuhi anda</p>
+                        <p>Ingat, jangan pernah tergiur juga dengan harga murah ambal ambal diskon, Bisa jadi itu juga salah satu cara pelaku mengelabuhi anda</p>
                     </div>
                 </li>
 
-                <li>
-                    <img src="img/img(9).jpg" alt="Item 3" style="pointer-events: none; user-select: none;">
-                    <div>
+                <li class="evidence-card">
+                    <img src="img/img(9).jpg" alt="Item 3">
+                    <div class="card-content">
                         <h3>Norek Penipu</h3>
-                        <p>ini adalah salah satu Nomor Rekening Pelaku, masih banyak lagi untuk Nomor rekening penipu ini
-                        </p>
+                        <p>ini adalah salah satu Nomor Rekening Pelaku, masih banyak lagi untuk Nomor rekening penipu ini</p>
                     </div>
-                    <li>
-                        <img src="img/img12.jpg" alt="Item 3" style="pointer-events: none; user-select: none;">
-                        <div>
-                            <h3>Sudah dilaporkan</h3>
-                            <p>Perihal penipuan ini, sudah ada pihak korban yang melaporkan ke pihak berwajib</p>
-                        </div>
-                    </li>
                 </li>
-                <li>
-                    <img src="img/img13.jpg" alt="Item 3" style="pointer-events: none; user-select: none;">
-                    <div>
+
+                <li class="evidence-card">
+                    <img src="img/img12.jpg" alt="Item 3">
+                    <div class="card-content">
+                        <h3>Sudah dilaporkan</h3>
+                        <p>Perihal penipuan ini, sudah ada pihak korban yang melaporkan ke pihak berwajib</p>
+                    </div>
+                </li>
+
+                <li class="evidence-card">
+                    <img src="img/img13.jpg" alt="Item 3">
+                    <div class="card-content">
                         <h3>Cara check Penipuan</h3>
                         <p>kalian juga bisa loh ikut melaporkan aksi penipuan dan mengecheck rekening penipu atau tidak <a href="https://cekrekening.id/">di cekrekening.id</a></p>
                     </div>
                 </li>
-            </li>
             </ul>
-<h1>Akun resmi YouNeedMie</h1>
-<ul>
-    <li>
-        <img src="img/cs/img (1).jpeg" alt="Item 1" style="pointer-events: none; user-select: none;">
-        <div>
-            <h3>Akun Instagram</h3>
-            <p>Akun YouNeedMie cuma ada satu ya, kalian bisa mengunjungi Instagram kami<a href="https://www.instagram.com/youneedmie.official/"> di sini</a>.</p>
+        </section>
 
-        </div>
-    </li>
-    <li>
-        <img src="tiktokynm.jpeg" alt="Item 2" style="pointer-events: none; user-select: none;">
-        <div>
-            <h3>Akun Tiktok Official </h3>
-            <p>Akun Tiktok YouNeedMie cuma ada satu ya, kalian bisa mengunjungi Tiktok kami<a href="https://www.tiktok.com/@youneedmie.official"> di sini</a>.</p>
+        <section class="official-section">
+            <h1>Akun resmi YouNeedMie</h1>
+            <ul class="official-accounts">
+                <li class="official-card">
+                    <img src="img/cs/img (1).jpeg" alt="Item 1">
+                    <div class="official-content">
+                        <h3>Akun Instagram</h3>
+                        <p>Akun YouNeedMie cuma ada satu ya, kalian bisa mengunjungi Instagram kami<a href="https://www.instagram.com/youneedmie.official/"> di sini</a>.</p>
+                    </div>
+                </li>
 
-        </div>
-    </li>
-    <li>
-        <img src="img/cs/img (3).jpeg" alt="Item 3" style="pointer-events: none; user-select: none;">
-        <div>
-            <h3>Nomor Bisnis YouNeedMie</h3>
-            <p>Pastikan kamu juga menghubungi Nomor kami yang resmi, total CS kami ada 3, kalian bisa check <a href="https://linkfly.to/youneedmie">di sini</a>.</p>
-            <p>WA<a href="https://wa.me/6282124952606"> CS Admin Livia</a> <br>
-                WA<a href="https://wa.me/6281212125422"> CS Admin Reka </a>  <br>
-                WA<a href="https://wa.me/6281212126722"> Cs Admin Risma </a> </p>
+                <li class="official-card">
+                    <img src="tiktokynm.jpeg" alt="Item 2">
+                    <div class="official-content">
+                        <h3>Akun Tiktok Official</h3>
+                        <p>Akun Tiktok YouNeedMie cuma ada satu ya, kalian bisa mengunjungi Tiktok kami<a href="https://www.tiktok.com/@youneedmie.official"> di sini</a>.</p>
+                    </div>
+                </li>
 
-        </div>
-    </li>
+                <li class="official-card">
+                    <img src="img/cs/img (3).jpeg" alt="Item 3">
+                    <div class="official-content">
+                        <h3>Nomor Bisnis YouNeedMie</h3>
+                        <p>Pastikan kamu juga menghubungi Nomor kami yang resmi, total CS kami ada 3, kalian bisa check <a href="https://linkfly.to/youneedmie">di sini</a>.</p>
+                        <p>
+                            WA<a href="https://wa.me/6282124952606"> CS Admin Livia</a> <br>
+                            WA<a href="https://wa.me/6281212125422"> CS Admin Reka </a> <br>
+                            WA<a href="https://wa.me/6281212126722"> Cs Admin Risma </a>
+                        </p>
+                    </div>
+                </li>
 
-    <li>
-        <img src="img/cs/img.jpg" alt="Item 3" style="pointer-events: none; user-select: none;">
-        <div>
-            <h3>Website Resmi Youneedmie</h3>
-            <p>Pastikan juga kamu tahu kalau website Youneedmie hanya ada satu yaitu <a href="https://youneedmie.com">Youneedmie.com </a>.</p>
-          
-        </div>
-    </li>
-
-</ul>
-
+                <li class="official-card">
+                    <img src="img/cs/img.jpg" alt="Item 3">
+                    <div class="official-content">
+                        <h3>Website Resmi Youneedmie</h3>
+                        <p>Pastikan juga kamu tahu kalau website Youneedmie hanya ada satu yaitu <a href="https://youneedmie.com">Youneedmie.com </a>.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
 </body>
-
 </html>
